@@ -2,7 +2,8 @@ import pytest
 # from constants import *
 from Utilities.data_reader import *
 from Utilities.data_writer import *
-import json
+import json 
+from pathlib import *
 
 from playwright.sync_api import sync_playwright
 
@@ -19,4 +20,14 @@ def browser_page():
         page = browser.new_page()
         page.goto("https://testautomationpractice.blogspot.com/")
         yield page
-        browser.close()
+        browser.close() 
+
+# @pytest.hookimpl(hookwrapper = True)    
+# def pytest_makereport(item,call):
+#     outcome = yield 
+#     report = outcome.get_result() 
+
+#     if report.when == "call" and report.failed: #Like Actual text execution
+#         page = item.funcargs.get("page")
+#         if page:
+#             screenshot_folder = Path("screenshots")
