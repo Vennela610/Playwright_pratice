@@ -1,8 +1,11 @@
 from playwright.sync_api import sync_playwright
+import allure
+@allure.title("Test Case: Drag and Drop, Dropdown Selection, and Slider Verification")
 def test_sliders_drag_drop():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
         page = browser.new_page()
+        with allure.step("Opening the url")
         page.goto("https://testautomationpractice.blogspot.com/")
 
         # wait for DOMContentLoaded and give widgets a moment to initialize
@@ -27,6 +30,7 @@ def test_sliders_drag_drop():
 
         print("Drag came to the drop location successfully")
 
+        
         #Handling the sliders 
         sliders = page.locator("#slider-range")
         handlers = sliders.locator(".ui-slider-handle")
