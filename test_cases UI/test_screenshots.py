@@ -27,7 +27,7 @@ def test_dynamic_table():
         # table = page.locator("#productTable") 
         # rows = table.locator("tbody tr")
         # rows_count = rows.count()
-        # print(rows_count)
+        # print(rows_count)                                             
         # print("The dynamic table count is:", rows_count)
 
         

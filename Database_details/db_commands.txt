@@ -1,0 +1,21 @@
+CREATE DATABASE playwright_db; : It will  create a new database
+
+Create the table:
+CREATE TABLE users(
+id SERIAL PRIMARY KEY,
+username VARCHAR(100) NOT NULL UNIQUE,
+password VARCHAR(100) NOT NULL,
+email VARCHAR(150) NOT NULL UNIQUE,
+first_name VARCHAR(100),
+last_name VARCHAR(100),
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+Inserting data to the table:
+INSERT INTO users 
+(username,password,email,first_name,last_name)
+VALUES('testuser01','test@123','testuser01@gmail.com','test','user')
+
+After creating the data in the sql we have to install the postgresql python driver
+
+command - pip install psycopg2-binary to install postgresql python driver

@@ -3,7 +3,9 @@ import pytest
 from Utilities.data_reader import *
 from Utilities.data_writer import *
 import json 
-from pathlib import *
+from pathlib import * 
+from API_files.API_login import  APILogin
+from Utilities.config_reader import  Config  
 
 from playwright.sync_api import sync_playwright
 
@@ -79,4 +81,10 @@ def screenshot(page):
         print(f"Screenshot saved: {screenshot_path}")
         return screenshot_path
 
-    return take_screenshot
+    return take_screenshot 
+
+
+@pytest.fixture 
+
+def api_login():
+    return APILogin(Config.parabank_API_base_url)
